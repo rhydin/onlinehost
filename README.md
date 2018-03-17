@@ -12,7 +12,7 @@ OnlineHost is a work in progress.  Some of the features outlined here are not im
 
 ### Add To Your Server
 
-[Invite the Bot to join your server.](https://discordapp.com/api/oauth2/authorize?client_id=392262179409231872&permissions=67259456&scope=bot)
+[Invite the Bot to join your server.](https://discordapp.com/api/oauth2/authorize?client_id=392262179409231872&permissions=268454992&scope=bot)
 
 ### Rolling Dice
 * `~roll` to roll 2 6-sided dice
@@ -43,6 +43,14 @@ We have Round 1 of NumberWang: [NumberWang on Youtube](https://www.google.com/ur
 * `~nw:score @user` Show another user's score for NumberWang.
 * `~nw:leaders` (future) Show the leaderboard for NumberWang.
 
+### Zombie Game
+
+Play a game of zombie die.
+
+* `~brains` to join a game.
+* `~brains` to start the game after 3+ people join (anyone can still join an active game).
+* `~brains` to roll the dice when it's your turn.
+* `~pass` to total your score and pass the dice to the next player.
 
 ### Admin Commands
 
