@@ -1,8 +1,6 @@
 # OnlineHost
 
-This bot serves three purposes: Rolling Dice, Proctoring Matches, and providing an archive for looking up old friends from AOL by screename searching.
-
-Future features will be added, as well.  Some probably features are described below.  Some features are very likely NOT listed here.
+This bot serves multiple purposes, most noteworthy are: Rolling Dice, Proctoring Matches, pseudo-private channels management, and providing an archive for looking up old friends from AOL by screename searching.  Other functionality can come or go depending on my availability to work on features.
 
 ## Status
 
