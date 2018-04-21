@@ -6,7 +6,7 @@ This bot serves multiple purposes, most noteworthy are: Rolling Dice, Proctoring
 
 OnlineHost is a work in progress.  Some of the features outlined here are not implemented yet but are in the planning stages.  Expect some volatility if you are an early adopter.  You've been warned.
 
-## Usage
+## Getting Started
 
 ### Add To Your Server
 
@@ -14,7 +14,7 @@ OnlineHost is a work in progress.  Some of the features outlined here are not im
 
 If you are not the owner of the server, and you do not have the **Administrator** permission, you may not be able to grant all the necessary permissions for the bot to function.  If you find you do not see all the permissions (or at the very least the bolded permissions) from the following section listed on the bot invite authorization page, you will need to have the server owner or an administrator perform the authorization.
 
-#### Disclosure regarding required permissions
+### Disclosure regarding required permissions
 
 I hate it when an app demands all sorts of permissions, some of them not obvious what they are for, without any explanation.  In the interest of transparency and security as a first-principle of my development efforts here, I give you my reasons for requesting these permissions in my bot:
 
@@ -31,6 +31,8 @@ For future planned features (will update as features are implemented):
 * add_reactions
 
 If you want to explicitly exclude the bot from any channel, you can edit that channel's permissions to deny `Read Messages` to the bot's integrated role.
+
+## Usage
 
 ### Bot Management
 
@@ -174,3 +176,7 @@ Not sure if any of these will be good.
 * `~set channel:admin @username` Server or channel owner can allow someone to manage channel-related bot settings.  Admins cannot add/remove admins.
 * `~set [module] <on|off> [server|channel|@user]` Turn on/off specific functionality for a specified entity.
 * `~set scores:method <sum|table|function|default> [optional name for table or function]` set how dice are scored.
+
+## Getting Support
+
+Issues can be opened here on Github, or you can reach out to me on my beta testing server at: https://discord.gg/t6k3EQZ
