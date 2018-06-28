@@ -60,11 +60,27 @@ The Bot owner has several commands available, including global ban for when user
 
 Essentially, rolling anything from `1d2` to `99d999`.  Modifiers can be added by using `+#` or `-#`.  By default, however, only dice with `d20 to d100` will be scored in the tradition of RhyDin scoring.  I may update the bot at a later date to allow server owners to define a custom table, but I will probably limit this feature to Patreon patrons.
 
-#### Rolling on a "Table"
+#### Rolling Against a List
 
 | Syntax | Description |
 | --- | --- |
 | `~choose item 1, item 2, ...` | Rolls `1dn`, where n is the number of items in comma-separated list. |
+
+### Rolling on a Table
+
+Roll tables are scoped to the server.  Server owners, server administrators, or users with the `Manage Server` permission can create/modify tables.
+
+| Syntax | Description |
+| --- | --- |
+| `~choose tablename [(+/-)#]` | Choose from a pre-compiled table by name. Allows integer modifiers. |
+| `~table new tablename [description]` | Create a table by name, optionally adding a description. |
+| `~table list` | Show a list of available table names. |
+| `~table info tablename` | Show the dice, description, and error information (such as gaps in the table sequence). |
+| `~table add tablename item 1, item 2 [, ...]` | Add items to a table, 1 side per item. |
+| `~table add tablename [s,e]item 1, [s,e]item 2 [, ...]` | Add items to a table, were `s` and `e` in square brackets represent the start and end sides for the item. |
+| `~table rewrite tablename side-# new item value` | Rewrite the item with the side-# in it's range. |
+| `~table remove tablename side-#` | remove an item from a table with the side-# in it's range. |
+| `~table delete tablename` | Delete a table entirely. |
 
 ### "Private" or "Personal" Channels
 
@@ -128,16 +144,6 @@ The actual implementation of how the following commands will probably differ sig
 | `~roll 4d6>5` | to roll 4d6 and drop any rolls greater than or equal to 5 |
 | `~roll 4d6<2` | to roll 4d6 and drop any rolls less than or equal to 2 |
 
-### Rolling on a "Table"
-
-| Syntax | Description |
-| --- | --- |
-| `~choose tablename` | Choose from a pre-compiled table by name. |
-| `~table new tablename [description]` | Create a table by name, optionally adding a description. |
-| `~table add tablename item 1, item 2 [, ...]` | Add items to a table. |
-| `~table remove tablename item` | remove an item from a table. |
-| `~table delete tablename` | Delete a table entirely. |
-
 ### Proctoring Matches
 
 #### Managing staff.
@@ -155,6 +161,9 @@ The actual implementation of how the following commands will probably differ sig
 | Syntax | User | Description |
 | --- | :---: | --- |
 | `~match:open [matchtype]` | Proctor | Proctors command to start a match.  Only one match can be open for init at a time in a channel, and a proctor may only proctor 1 match at a time globally. |
+| `~match:open singles @user1 @user2` | Proctor | Start a one-on-one match between @user1 and @user2. |
+| `~match:open mass @user1 @user2 @user3 ...` | Proctor | Proctors command to start a mass spar with a closed list of conbatants. |
+| `~match:open mass` | Proctor | Proctors command to start a mass spar open to anyone as conbatants. |
 | `~match:init` | Player | Players command to join an open match in the channel.  Rolls 1d100. |
 | `~match:begin` | Proctor| Proctor will close an open match, and set the turn order, and the first player may attack.  Tied init rolls much be broken first. |
 | <code>~match:roll [1-5]d[2-100] @username &#124; 2:@username 2:@username</code> | Player | Rolling dice for a match will target the @user[s] for damage. |
