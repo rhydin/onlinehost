@@ -49,24 +49,39 @@ If you want to explicitly exclude the bot from any channel, you can edit that ch
 
 The Bot owner has several commands available, including global ban for when users abuse the Bot's functionality.  Anyone banned from using the bot for explicit abuse WILL NOT be unbanned. Anyone caught creating multiple accounts to circumvent this ban will be reported to Discord for abuse.
 
+### User-defined Variables
+
+TODO: Explain these commands.
+
 ### Rolling Dice
 
 | Syntax | Description |
 | --- | --- |
-| `~roll` | Rolls two 6-sided dice (default dice). |
+| `~roll` | Rolls two 6-sided dice (or whatever other default dice are set). |
 | `~roll 2d20` | Rolls two 20-sided dice. |
 | `~roll 99d999` | Rolls ninety-nine 999-sided dice. |
 | `~roll 4f` | Rolls four fate dice. |
+| Exploding Dice ||
+| `~roll 4d6!` | to roll exploding dice on thie highest side (6s in the example). |
+| `~roll 4d6!6` | to roll exploding dice on all 6s |
+| `~roll 4d6!>4` | to roll exploding dice on numbers greater than 4 |
+| `~roll 4d6!<3` | to roll exploding dice on numbers less than 3 |
+| `~roll 4d10!>=4` | to roll exploding dice on numbers greater than or equal to 4 |
+| `~roll 4d10!<=3` | to roll exploding dice on numbers less than or equal to 3 |
+| Success Dice ||
+| `~roll dh50` | to roll degress of success against a target of 50; above = fail, below = success |
 
 Essentially, rolling anything from `1d2` to `99d999`.  Modifiers can be added by using `+#` or `-#`.  By default, however, only dice with `d20 to d100` will be scored in the tradition of RhyDin scoring.  I may update the bot at a later date to allow server owners to define a custom table, but I will probably limit this feature to Patreon patrons.
 
-#### Rolling Against a List
+### Rolling on a Set of Choices
+
+#### Rolling Against an Impromptu List
 
 | Syntax | Description |
 | --- | --- |
 | `~choose item 1, item 2, ...` | Rolls `1dn`, where n is the number of items in comma-separated list. |
 
-### Rolling on a Table
+#### Rolling Against a Predefined List
 
 Roll tables are scoped to the server.  Server owners, server administrators, or users with the `Manage Server` permission can create/modify tables.
 
@@ -138,9 +153,6 @@ The actual implementation of how the following commands will probably differ sig
 
 | Syntax | Description |
 | --- | --- |
-| `~roll 4d6!` | to roll exploding dice on thie highest side (6s in the example). |
-| `~roll 4d6!>4` | to roll exploding dice on numbers greater than or equal to 4 |
-| `~roll 4d6!<4` | to roll exploding dice on numbers less than or equal to 4 |
 | `~roll 4d6>5` | to roll 4d6 and drop any rolls greater than or equal to 5 |
 | `~roll 4d6<2` | to roll 4d6 and drop any rolls less than or equal to 2 |
 
