@@ -206,3 +206,7 @@ Not sure if any of these will be good.
 ## Getting Support
 
 Issues can be opened here on Github, or you can reach out to me on my beta testing server at: https://discord.gg/t6k3EQZ
+
+### Disclaimer and No Liability
+
+The bot is neither created nor endorsed by Discord.  Any functionality is provided at the discretion of the bot's maintainer(s).  The Bot is operated as-is and makes no warranty to the quality of service.  Speak with your server owner if you have problems with the bot being present on any server.  Per Discord developer ToS, this bot does not make and store a record any chat. The bot only maintains logs of commands directly issued to it for security and maintenance purposes.
