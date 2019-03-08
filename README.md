@@ -55,12 +55,13 @@ TODO: Explain these commands.
 
 ### Rolling Dice
 
+(The `~roll` command can be shortened to just `~r`.)
+
 | Syntax | Description |
 | --- | --- |
 | `~roll` | Rolls two 6-sided dice (or whatever other default dice are set). |
 | `~roll 2d20` | Rolls two 20-sided dice. |
 | `~roll 99d999` | Rolls ninety-nine 999-sided dice. |
-| `~roll 4f` | Rolls four fate dice. |
 | Exploding Dice ||
 | `~roll 4d6!` | to roll exploding dice on thie highest side (6s in the example). |
 | `~roll 4d6!6` | to roll exploding dice on all 6s |
@@ -68,8 +69,19 @@ TODO: Explain these commands.
 | `~roll 4d6!<3` | to roll exploding dice on numbers less than 3 |
 | `~roll 4d10!>=4` | to roll exploding dice on numbers greater than or equal to 4 |
 | `~roll 4d10!<=3` | to roll exploding dice on numbers less than or equal to 3 |
+| Keep/Drop ||
+| `~roll 4d6k` | to roll 4d6 and keep the highest die |
+| `~roll 4d6d` | to roll 4d6 and drop the highest die (yes, drop the HIGHEST) |
+| `~roll 4d6k3` | to roll 4d6 and keep the highest 3 rolls |
+| `~roll 4d6d3` | to roll 4d6 and drop the highest 3 rolls (yes, drop the HIGHEST) |
+| Success Counting ||
+| `~roll 4d6c` | Counts the number of dice equal to the highest side (d6 = 6) |
+| `~roll 4d10c>=4` | count the dice with sides greater than or equal to 4 |
+| `~roll 4d10c<=3` | count the dice with sides less than or equal to 3 |
 | Success Dice ||
-| `~roll dh50` | to roll degress of success against a target of 50; above = fail, below = success |
+| `~roll dh50` | to roll degrees of success against a target of 50; above = fail, below = success |
+| Fudge Dice ||
+| `~roll 4f` | Rolls four fudge dice. |
 
 Essentially, rolling anything from `1d2` to `99d999`.  Modifiers can be added by using `+#` or `-#`.  By default, however, only dice with `d20 to d100` will be scored in the tradition of RhyDin scoring.  I may update the bot at a later date to allow server owners to define a custom table, but I will probably limit this feature to Patreon patrons.
 
@@ -148,13 +160,6 @@ Play a game of brain dice.
 ## Future Usage (not implemented yet)
 
 The actual implementation of how the following commands will probably differ significantly from those proposed here.  This section represents mainly a thought dump on what could be done.
-
-### Rolling Dice
-
-| Syntax | Description |
-| --- | --- |
-| `~roll 4d6>5` | to roll 4d6 and drop any rolls greater than or equal to 5 |
-| `~roll 4d6<2` | to roll 4d6 and drop any rolls less than or equal to 2 |
 
 ### Proctoring Matches
 
