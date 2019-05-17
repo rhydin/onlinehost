@@ -26,7 +26,7 @@ I hate it when an app demands all sorts of permissions, some of them not obvious
 * **send_messages** Allows the bot to respond to commands on the server
 * **manage_messages** Allows the bot to help keep the chat dialogue/backlog clear of excessive command usage
 * **manage_channels** This is required for the Private Channels Module (bot must be able to create/remove channels)
-* **manage_roles** This is required for the Private Channels Module (but must be able to create/remove roles, and apply them to users)
+* **manage_roles** This is required for the Private Channels Module and Greeting Role assignment (bot must be able to assign roles to users)
 
 For future planned features (will update as features are implemented):
 * create_instant_invite
