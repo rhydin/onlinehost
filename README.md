@@ -6,13 +6,17 @@ This bot serves multiple purposes, most noteworthy are: Rolling Dice, Proctoring
 
 OnlineHost is a work in progress.  Some of the features outlined here are not implemented yet but are in the planning stages.  Expect some volatility if you are an early adopter.  You've been warned.
 
+## Disclosure
+
+Per Discord's Developer Terms of Service (TOS), this bot does not log chat history.  Every possible effort is made to make good faith adherence to all TOS and any missed or misinterpreted terms will be rectified immediately.  The bot stores very little user data and only for operational purposes to ensure a stable, enjoyable experience for those wishing to engage with the bot.  The bot does store operational logs for quality control purposes, but those logs only consist of commands issued directly to the bot and other operating conditions.
+
 ## Getting Started
 
 ### Add To Your Server
 
 [Invite the Bot to join your server.](https://discordapp.com/api/oauth2/authorize?client_id=392262179409231872&permissions=805334097&scope=bot)
 
-If you are not the owner of the server, and you do not have the **Administrator** permission, you may not be able to grant all the necessary permissions for the bot to function.  If you find you do not see all the permissions (or at the very least the bolded permissions) from the following section listed on the bot invite authorization page, you will need to have the server owner or an administrator perform the authorization.
+If you are not the owner of the server, and you do not have the **Administrator** permission, you may not be able to grant all the necessary permissions for the bot to function.  If you do not have **manage_server** you cannot add bots at all.  If you find you do not see all the permissions enabled (or at the very least the bolded permissions) from the following section listed on the bot invite authorization page, you will need to have the server owner or an administrator perform the authorization.
 
 ### Disclosure regarding required permissions
 
@@ -48,6 +52,18 @@ If you want to explicitly exclude the bot from any channel, you can edit that ch
 #### Admin Commands
 
 The Bot owner has several commands available, including global ban for when users abuse the Bot's functionality.  Anyone banned from using the bot for explicit abuse WILL NOT be unbanned. Anyone caught creating multiple accounts to circumvent this ban will be reported to Discord for abuse.
+
+### Greetings
+
+#### Greeting Message
+
+The bot can be configured to greet newcomers to your server with a custom message.
+TODO
+
+#### Greeting Role
+
+The bot can be configured to assign a role to newcomers on your server.
+TODO
 
 ### User-defined Variables
 
