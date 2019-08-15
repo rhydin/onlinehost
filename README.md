@@ -125,6 +125,29 @@ Roll tables are scoped to the server.  Server owners, server administrators, or 
 | `~table remove tablename side-#` | remove an item from a table with the side-# in it's range. |
 | `~table delete tablename` | Delete a table entirely. |
 
+### Sparring Matches
+
+| Syntax | User | Description |
+| --- | :---: | --- |
+| `~spar:open [fixed dice] [fixed hp]` | Proctor | Proctors command to start a match.  If fixed dice or fixed hp are provided, all participants will have the same dice or hp. |
+| `~spar:join` | Player | Players command to join an open match in the channel.  Rolls 1d100. |
+| `~spar:close` | Player | Closes the match to new participants and resolves any tiebreaking for initial rolls. |
+| `~spar:begin` | Proctor | The combat is now ready for combat; the first player may attack. |
+| `~spar:pause` | Proctor | Pauses a match preventing any commands for the match from being processed. |
+| `~spar:resume` | Proctor | Start up a paused match. |
+| <code>~spar:roll [1-5]d[2-100] @username &#124; 2 @username 2 @username</code> | Player | Rolling dice for a match will target the @user[s] for damage. |
+| `~spar:scoreboard` | Participants | Prints out a scoreboard for the current match.  If the proctor uses this command, it prints to the channel of the current match.  If a player uses this command, OnlineHost will send the scoreboard in a DM. |
+| `~spar:scoreboard @proctor` | Anyone | Prints out a scoreboard for the current match being run by the mentioned proctor. Scoreboard will be sent in a DM. |
+| <code>~spar:update [hp dice maxhp init damage] @username [+&#124;-]?[1-100]</code> | Proctor | Proctor command to update player data if something got mixed up (like a forgotten modifier). |
+| `~spar:quit [reason]` | Player | a Player can quit a match at any time for any reason or no reason. |
+| `~spar:skip` | Proctor | Proctor can skip the current player's turn. |
+| `~spar:add @username [dice]` | Proctor | Proctor can add a user after the match is started. |
+| `~spar:remove @username [reason]` | Proctor | Proctor can remove a user for whatever reason. |
+| `~spar:cancel` | Proctor | Proctor can end a match prematurely. |
+| `~spar:remove @username` | Proctor | Proctor can remove a match player. |
+| `~spar:assign @username` | Proctor | Proctor can hand a match over to another proctor if they need to leave. |
+| `~spar:end` | Proctor | Proctor wraps up the match. This will tally xp (future feature) and removes the scoreboard. |
+
 ### "Private" or "Personal" Channels
 
 | Syntax | Description |
@@ -148,38 +171,20 @@ Roll tables are scoped to the server.  Server owners, server administrators, or 
 | `~sn:optout` | This command will prevent your screen names from being searchable. |
 | `~sn:optin` | This command will re-enable your screen names to be found with search if you previously opted out. |
 
-### NumberWang
-
-We have Round 1 of NumberWang (needs citation).  Scores will be reset when the bot is restarted.
-
-| Syntax | Description |
-| --- | --- |
-| `~nw #` | Play your number for NumberWang. |
-| `~nw:score` | Show your score for NumberWang. |
-| `~nw:score @user` | Show another user's score for NumberWang. |
-| `~nw:leaders` | (future) Show the leaderboard for NumberWang. |
-
-### Eat Some Brains, do get Shot
-
-Play a game of brain dice.
-
-| Syntax | Description |
-| --- | --- |
-| `~brains join` | Join the current game. |
-| `~brains start` | Start the game after 3+ people join (anyone can still join an active game). |
-| `~brains roll` | Roll the dice on your turn. |
-| `~brains pass` | Pass the dice to the next player. |
-| `~brains scores` | Pass the dice to the next player. |
-| `~brains take` | Take ownership of the game in this channel. |
-| `~brains quit` | Leave a game before it's finished. |
-
 ## Future Usage (not implemented yet)
 
 The actual implementation of how the following commands will probably differ significantly from those proposed here.  This section represents mainly a thought dump on what could be done.
 
 ### Proctoring Matches
 
-#### Managing staff.
+#### New functionality
+
+| Syntax | User | Description |
+| --- | :---: | --- |
+| `~spar:assign @proctor @username` | Admin | Server or channel admin can forcefully reassign a match to another proctor. |
+| `~spar:npc dice health [@proctor] NPC's Name` | Proctor | Create an NPC in the match.  Optionally, specify a "proctor" to play the NPC. |
+
+#### Managing staff
 
 | Syntax | Description |
 | --- | --- |
@@ -188,28 +193,6 @@ The actual implementation of how the following commands will probably differ sig
 | `~proctors:add @username` | Flag a user as allowed to proctor matches. |
 | `~proctors:stats @username` | Show statistics for a proctor. |
 | `~proctors:remove @username` | Remove a user from the proctors list. |
-
-#### Running matches.
-
-| Syntax | User | Description |
-| --- | :---: | --- |
-| `~match:open [matchtype]` | Proctor | Proctors command to start a match.  Only one match can be open for init at a time in a channel, and a proctor may only proctor 1 match at a time globally. |
-| `~match:open singles @user1 @user2` | Proctor | Start a one-on-one match between @user1 and @user2. |
-| `~match:open mass @user1 @user2 @user3 ...` | Proctor | Proctors command to start a mass spar with a closed list of conbatants. |
-| `~match:open mass` | Proctor | Proctors command to start a mass spar open to anyone as conbatants. |
-| `~match:init` | Player | Players command to join an open match in the channel.  Rolls 1d100. |
-| `~match:begin` | Proctor| Proctor will close an open match, and set the turn order, and the first player may attack.  Tied init rolls much be broken first. |
-| <code>~match:roll [1-5]d[2-100] @username &#124; 2:@username 2:@username</code> | Player | Rolling dice for a match will target the @user[s] for damage. |
-| `~match:scoreboard` | Participants | Prints out a scoreboard for the current match.  If the proctor uses this command, it prints to the channel of the current match.  If a player uses this command, OnlineHost will send the scoreboard in a DM.  Anyone else will do nothing since they are not associated with a match. |
-| `~match:scoreboard @proctor` | Anyone | Prints out a scoreboard for the current match being run by the mentioned proctor. Scoreboard will be sent in a DM. |
-| <code>~match:scoreboard:update @username [+&#124;-]?[1-100]</code> | Proctor | Proctor command to update scores if something got mixed up (like a forgotten modifier). |
-| `~match:leave [reason]` | Player | a Player can quit a match at any time for any reason or no reason. |
-| `~match:remove @username [reason]` | Proctor | Proctor can remove a user for whatever reason. |
-| `~match:end` | Proctor | Proctor can end a match prematurely. |
-| `~match:remove @username` | Proctor | Proctor can remove a match player. |
-| `~match:assign @username` | Proctor | Proctor can hand a match over to another proctor if they need to leave. |
-| `~match:assign @proctor @username` | Admin | Server or channel admin can forcefully reassign a match to another proctor. |
-| `~match:npc dice health [@proctor] NPC's Name` | Proctor | Create an NPC in the match.  Optionally, specify a "proctor" to play the NPC. |
 
 ### Settings (Administrative commands)
 
