@@ -65,10 +65,6 @@ TODO
 The bot can be configured to assign a role to newcomers on your server.
 TODO
 
-### User-defined Variables
-
-TODO: Explain these commands.
-
 ### Rolling Dice
 
 (The `~roll` command can be shortened to just `~r`.)
@@ -98,8 +94,40 @@ TODO: Explain these commands.
 | `~roll dh50` | to roll degrees of success against a target of 50; above = fail, below = success |
 | Fudge Dice ||
 | `~roll 4f` | Rolls four fudge dice. |
+| Variables ||
+| `~roll $(variable_name)` | Enclosing the variable name in `$(` and `)` to interpolate it |
 
 Essentially, rolling anything from `1d2` to `99d999`.  Modifiers can be added by using `+#` or `-#`.  By default, however, only dice with `d20 to d100` will be scored in the tradition of RhyDin scoring.  I may update the bot at a later date to allow server owners to define a custom table, but I will probably limit this feature to Patreon patrons.
+
+### User-defined Variables
+
+OnlineHost has the capability of storing variables (abilities, statistics, characteristics, predefined roll strings, etc.).  These can either be stored against a channel or portably in a variable profile.
+
+#### Variables
+
+Variables can be nested.  Roll strings can be variablized.
+
+| Syntax | Description |
+| --- | --- |
+| `~myvars` | Show a list of all set variables |
+| `~myvars <var_name>` | Show the value of a variable, if it exists |
+| `~myvars <var_name> <value of variable>` | Set the value of a variable |
+| `~bulkvars <dictionary>` | Create multiple variables from a semicolon (`;`) separated list of `variable:value` pairs |
+| `~delvars <var_name_1> [...]` | Delete one or more variables |
+
+#### Profiles
+
+| Syntax | Description |
+| --- | --- |
+| `~profile` | Reports which profile is current active |
+| `~profile list` | List your profiles and reports how many variables and a brief description |
+| `~profile create <profile_name> [optional profile description` | Make a new profile |
+| `~use <profile_name>` | choose which profile is active in the current channel |
+| `~rename <old_profile> <new_profile>` | change the name of an existing profile |
+| `~copy <var> [from] <profile_1> [to] <profile_2>` | copy a variable from one profile to another |
+| `~copyall <source_profile> <target_profile>` | copy all variables from one profile to another `see ~help profile:copyall for more` |
+| `~merge <receiving_profile> <disposed_profile> [...]` | combine all the variables of two or more profiles into one |
+| `~delete <profile_name>` | completely delete a profile and all it's contained variables |
 
 ### Rolling on a Set of Choices
 
