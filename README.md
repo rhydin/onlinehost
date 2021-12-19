@@ -1,3 +1,5 @@
+**On account of discord's latest set of changes, OnlineHost is actually currently under the process of being rebuilt to transition from tokenized commands as described herein to slash commands.  Additionally, menus and reaction-based "control panels" will be transition to component-based (REAL BUTTONS!!!) functionality.  Have a nice day!**
+
 # OnlineHost
 
 This bot serves multiple purposes, most noteworthy are: Rolling Dice, Proctoring Matches, pseudo-private channels management, and providing an archive for looking up old friends from AOL by screename searching.  Other functionality can come or go depending on my availability to work on features.
